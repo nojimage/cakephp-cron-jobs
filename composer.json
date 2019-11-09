@@ -1,0 +1,26 @@
+{
+    "name": "elstc/cakephp-cron-jobs",
+    "license": "MIT",
+    "description": "A cron job runner for CakePHP",
+    "type": "cakephp-plugin",
+    "require": {
+        "php": ">=5.6",
+        "cakephp/cakephp": "^3.5",
+        "lavary/crunz": "^1.12"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7|^6.0",
+        "cakephp/cakephp-codesniffer": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Elastic\\CronJobs\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elastic\\CronJobs\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}
