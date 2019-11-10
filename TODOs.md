@@ -1,0 +1,2 @@
+- [ ] `vendor/elstc/cakephp-cronjobs/tasks/` の指定を不要にする
+- [ ] improve README, generate crunz config file, how to specific tasks directory.
