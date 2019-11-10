@@ -80,7 +80,7 @@ class CronJobsShell extends Shell
      *
      * @return \Crunz\Application
      */
-    private function getApp()
+    protected function getApp()
     {
         return new Application('CakePHP Cron Scheduler via Crunz', CRUNZ_VERSION);
     }
@@ -90,7 +90,7 @@ class CronJobsShell extends Shell
      *
      * @return \Symfony\Component\Console\Output\ConsoleOutput
      */
-    private function getOutput()
+	protected function getOutput()
     {
         return new ConsoleOutput();
     }
