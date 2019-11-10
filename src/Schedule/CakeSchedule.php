@@ -17,8 +17,8 @@ class CakeSchedule extends Schedule
     /**
      * Add a new event as CakePHP command to the schedule object.
      *
-     * @param string|\Closure $command
-     * @param array $parameters
+     * @param string|\Closure $command a CakePHP's Command/Shell name
+     * @param array $parameters command arguments and options
      *
      * @return \Crunz\Event
      */

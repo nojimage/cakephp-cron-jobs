@@ -85,12 +85,12 @@ class CronJobsShell extends Shell
         return new Application('CakePHP Cron Scheduler via Crunz', CRUNZ_VERSION);
     }
 
-	/**
+    /**
      * Returns the instance of OutputInterface the MigrationsDispatcher will have to use.
      *
      * @return \Symfony\Component\Console\Output\ConsoleOutput
      */
-	protected function getOutput()
+    protected function getOutput()
     {
         return new ConsoleOutput();
     }

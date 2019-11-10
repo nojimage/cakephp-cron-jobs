@@ -7,16 +7,16 @@ use Elastic\CronJobs\Schedule\CakeSchedule;
 
 class CakeScheduleTest extends TestCase
 {
-	/**
-	 * can build cake shell command
-	 */
-	public function testRunCommand()
-	{
-		$schedule = new CakeSchedule();
-		$result = $schedule->runCommand('example_task', ['with-arg']);
+    /**
+     * can build cake shell command
+     */
+    public function testRunCommand()
+    {
+        $schedule = new CakeSchedule();
+        $result = $schedule->runCommand('example_task', ['with-arg']);
 
-		// Can add event
-		$this->assertCount(1, $schedule->events());
-		$this->assertSame(sprintf("'%s/bin/cake' example_task with-arg", ROOT), $result->getCommand());
-	}
+        // Can add event
+        $this->assertCount(1, $schedule->events());
+        $this->assertSame(sprintf("'%s/bin/cake' example_task with-arg", ROOT), $result->getCommand());
+    }
 }
