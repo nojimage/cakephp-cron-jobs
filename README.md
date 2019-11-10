@@ -54,7 +54,7 @@ add your cron schedule, use `crontab -e`
 
 You can register a schedule job from the CakePHP event system.
 
-in your bootstrap.php:
+Register to job schduler in bootstrap_cli.php, using cakephp event system:
 
 ```php
 use Cake\Event\Event;
