@@ -80,7 +80,6 @@ class CronJobsShellTest extends ConsoleIntegrationTestCase
         $this->exec(sprintf('Elastic/CronJobs.CronJobs schedule:list %s', $this->tasksPath));
 
         $this->assertExitCode(0);
-        // TODO: check output
     }
 
     /**
