@@ -17,6 +17,7 @@ class CakeScheduleTest extends TestCase
 
         // Can add event
         $this->assertCount(1, $schedule->events());
-        $this->assertSame(sprintf("'%s/bin/cake' example_task with-arg", ROOT), $result->getCommand());
+        $this->assertSame('bin/cake example_task with-arg', $result->getCommand());
+        $this->assertSame(sprintf("'%s'", ROOT), $result->getWorkingDirectory());
     }
 }

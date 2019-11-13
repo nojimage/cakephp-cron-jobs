@@ -24,7 +24,8 @@ class CakeSchedule extends Schedule
      */
     public function runCommand($command, array $parameters = [])
     {
-        return $this->run(escapeshellarg($this->getCakeCommand()) . ' ' . $command, $parameters);
+        return $this->run($this->getCakeCommand() . ' ' . $command, $parameters)
+            ->in(escapeshellarg(ROOT));
     }
 
     /**
@@ -32,7 +33,7 @@ class CakeSchedule extends Schedule
      */
     protected function getCakeCommand()
     {
-        $binDir = ROOT . DS . 'bin' . DS;
+        $binDir = 'bin' . DS;
 
         if (0 === strpos(strtoupper(PHP_OS), 'WIN')) {
             return $binDir . 'cake.bat';
