@@ -42,6 +42,21 @@ $this->addPlugin('Elastic/CronJobs');
 Plugin::load('Elastic/CronJobs');
 ```
 
+### Generate config file
+
+Run `bin/cake CronJobs publish:config` command.
+The command generate `crunz.yml` in the project `ROOT` directory.
+
+You can configure with `crunz.yml`, see also [https://github.com/lavary/crunz#configuration](https://github.com/lavary/crunz#configuration)
+
+I recommend changing `source:` to:
+
+```yaml
+source: vendor/elstc/cakephp-cron-jobs/tasks
+```
+
+This makes it unnecessary to specify a directory when using `schedule:run` and `schedule:list` command.
+
 ### Register to cron
 
 add your cron schedule, use `crontab -e`
