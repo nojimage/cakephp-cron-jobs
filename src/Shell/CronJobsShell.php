@@ -51,6 +51,9 @@ class CronJobsShell extends Shell
      */
     public function runCommand($argv, $autoMethod = false, $extra = [])
     {
+        // By prepending a not exist command name to the command args,
+        // then all calls will call `main` method and be bypassed
+        // to the symfony application
         array_unshift($argv, 'crunz');
         $this->argv = $argv;
 
