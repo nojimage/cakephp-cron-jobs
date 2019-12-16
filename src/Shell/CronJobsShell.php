@@ -79,7 +79,7 @@ class CronJobsShell extends Shell
     }
 
     /**
-     * Returns the MigrationsDispatcher the Shell will have to use
+     * Returns the Crunz\Application the Shell will have to use
      *
      * @return \Crunz\Application
      */
@@ -89,7 +89,7 @@ class CronJobsShell extends Shell
     }
 
     /**
-     * Returns the instance of OutputInterface the MigrationsDispatcher will have to use.
+     * Returns the instance of OutputInterface the Crunz\Application will have to use.
      *
      * @return \Symfony\Component\Console\Output\ConsoleOutput
      */
