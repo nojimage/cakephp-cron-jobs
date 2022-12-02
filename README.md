@@ -70,7 +70,7 @@ use Cake\Event\Event;
 use Cake\Event\EventManager;
 
 EventManager::instance()->on('CronJobs.buildSchedule', static function (Event $event) {
-    /* @var $schedule \Elastic\CronJobs\Schedule\CakeSchedule */
+    /** @type \Elastic\CronJobs\Schedule\CakeSchedule $schedule */
     $schedule = $event->getSubject();
     
     // Add scheduled command

@@ -2,7 +2,6 @@
 /*
  * Copyright 2022 ELASTIC Consultants Inc.
  */
-
 declare(strict_types=1);
 
 namespace Elastic\CronJobs\Test\TestCase\CronJobs\Schedule;

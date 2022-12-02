@@ -20,7 +20,6 @@ class CakeSchedule extends Schedule
      *
      * @param string|\Closure $command a CakePHP's Command/Shell name
      * @param array $parameters command arguments and options
-     *
      * @return \Crunz\Event
      */
     public function runCommand($command, array $parameters = []): \Crunz\Event

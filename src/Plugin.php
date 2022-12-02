@@ -2,7 +2,6 @@
 /*
  * Copyright 2022 ELASTIC Consultants Inc.
  */
-
 declare(strict_types=1);
 
 namespace Elastic\CronJobs;
@@ -37,6 +36,9 @@ class Plugin extends BasePlugin
      */
     protected $consoleEnabled = true;
 
+    /**
+     * @inheritDoc
+     */
     public function console(CommandCollection $commands): CommandCollection
     {
         $commands->addMany([

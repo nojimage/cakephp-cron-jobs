@@ -41,9 +41,9 @@ class CronJobsCommand extends BaseCommand
     }
 
     /**
-     * bypass to Crunz
-     *
      * {@inheritDoc}
+     *
+     * bypass to Crunz
      */
     public function execute(Arguments $args, ConsoleIo $io)
     {
@@ -66,7 +66,7 @@ class CronJobsCommand extends BaseCommand
     /**
      * Returns the instance of ArgvInput the Crunz\Application will have to use.
      *
-     * @param Arguments $args the command args
+     * @param \Cake\Console\Arguments $args the command args
      * @return \Symfony\Component\Console\Input\InputInterface
      */
     protected function getInput(Arguments $args): InputInterface

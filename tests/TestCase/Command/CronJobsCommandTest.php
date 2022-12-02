@@ -11,7 +11,6 @@ use Cake\Core\Plugin;
 use Cake\TestSuite\ConsoleIntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 use Elastic\CronJobs\Command\CronJobsCommand;
-use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * Elastic\CronJobs\Shell\CronJobsShell Test Case
@@ -23,7 +22,7 @@ class CronJobsCommandTest extends TestCase
     /**
      * ConsoleIo mock
      *
-     * @var ConsoleIo|MockObject
+     * @var ConsoleIo|\PHPUnit\Framework\MockObject\MockObject
      */
     public $io;
 
@@ -54,7 +53,7 @@ class CronJobsCommandTest extends TestCase
         parent::setUp();
         $this->useCommandRunner();
 
-        $this->io = $this->getMockBuilder('Cake\Console\ConsoleIo')->getMock();
+        $this->io = $this->getMockBuilder(ConsoleIo::class)->getMock();
         $this->CronJobs = new CronJobsCommand();
 
         // change working directory to test app root

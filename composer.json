@@ -24,6 +24,11 @@
             "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
         }
     },
+    "scripts": {
+        "test": "phpunit",
+        "cs": "phpcs -ps .",
+        "cs-fix": "phpcbf -p ."
+    },
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
