@@ -151,7 +151,7 @@ jobs:
 
       - name: Submit code coverage
         if: matrix.coverage == 'coverage'
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v3
 
   cs-stan:
     name: Coding Standard & Static Analysis
