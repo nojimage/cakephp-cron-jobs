@@ -1,4 +1,4 @@
-# A cron job runner for CakePHP 3.x
+# A cron job runner for CakePHP
 
 <p align="center">
     <a href="LICENSE.txt" target="_blank">
