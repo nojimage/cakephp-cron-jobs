@@ -1,6 +1,11 @@
 <?php
+/*
+ * Copyright 2022 ELASTIC Consultants Inc.
+ */
 
-namespace Elastic\Test\TestCase\CronJobs\Schedule;
+declare(strict_types=1);
+
+namespace Elastic\CronJobs\Test\TestCase\CronJobs\Schedule;
 
 use Cake\TestSuite\TestCase;
 use Elastic\CronJobs\Schedule\CakeSchedule;
@@ -8,9 +13,9 @@ use Elastic\CronJobs\Schedule\CakeSchedule;
 class CakeScheduleTest extends TestCase
 {
     /**
-     * can build cake shell command
+     * can build cake console command
      */
-    public function testRunCommand()
+    public function testRunCommand(): void
     {
         $schedule = new CakeSchedule();
         $result = $schedule->runCommand('example_task', ['with-arg']);

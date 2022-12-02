@@ -4,8 +4,8 @@
     <a href="LICENSE.txt" target="_blank">
         <img alt="Software License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square">
     </a>
-    <a href="https://travis-ci.org/nojimage/cakephp-cron-jobs" target="_blank">
-        <img alt="Build Status" src="https://img.shields.io/travis/nojimage/cakephp-cron-jobs/master.svg?style=flat-square">
+    <a href="https://github.com/nojimage/cakephp-cron-jobs/actions" target="_blank">
+        <img alt="Build Status" src="https://img.shields.io/github/workflow/status/nojimage/cakephp-cron-jobs/CakePHP%20Plugin%20CI/cake4?style=flat-square">
     </a>
     <a href="https://codecov.io/gh/nojimage/cakephp-cron-jobs" target="_blank">
         <img alt="Codecov" src="https://img.shields.io/codecov/c/github/nojimage/cakephp-cron-jobs.svg?style=flat-square">
@@ -30,16 +30,10 @@ composer require elstc/cakephp-cron-jobs
 
 ### Load plugin
 
-(CakePHP >= 3.6.0) Load the plugin by adding the following statement in your project's `src/Application.php`:
+Load the plugin by adding the following statement in your project's `src/Application.php`:
 
 ```
 $this->addPlugin('Elastic/CronJobs');
-```
-
-(CakePHP <= 3.5.x) Load the plugin by adding the following statement in your project's `config/bootstrap.php` file:
-
-```
-Plugin::load('Elastic/CronJobs');
 ```
 
 ### Generate config file
@@ -76,16 +70,16 @@ use Cake\Event\Event;
 use Cake\Event\EventManager;
 
 EventManager::instance()->on('CronJobs.buildSchedule', static function (Event $event) {
-    $schedule = $event->getSubject();
     /* @var $schedule \Elastic\CronJobs\Schedule\CakeSchedule */
+    $schedule = $event->getSubject();
     
-    // Add scheduled shell command
+    // Add scheduled command
     $schedule->run('touch tmp/crunz-time-from-event')
         ->description('your job description')
         ->everyDay()
         ->at('09:00');
 
-    // Add scheduled cake's shell command
+    // Add scheduled cake's command
     // such as `bin/cake your_command comannd_arg1 --command-option --some-opt=value`
     $schedule->runCommand('your_command', [
             'comannd_arg1',
@@ -105,3 +99,9 @@ See also: [lavary/crunz README](https://github.com/lavary/crunz#crunz)
 ```sh
 bin/cake CronJobs schedule:list vendor/elstc/cakephp-cron-jobs/tasks/
 ```
+
+### Upgrade from CakePHP 3
+
+larvery/crunz updated from 1.12 to 2.x(<= PHP 7.3), 3.x(>= PHP 7.4), See also crunz's Upgrade Guide.
+
+[crunz/UPGRADE\.md at master · lavary/crunz](https://github.com/lavary/crunz/blob/master/UPGRADE.md)

@@ -1,7 +1,8 @@
 <?php
-/**
- * Copyright 2019 ELASTIC Consultants Inc.
+/*
+ * Copyright 2022 ELASTIC Consultants Inc.
  */
+declare(strict_types=1);
 
 namespace Elastic\CronJobs\Schedule;
 
@@ -22,7 +23,7 @@ class CakeSchedule extends Schedule
      *
      * @return \Crunz\Event
      */
-    public function runCommand($command, array $parameters = [])
+    public function runCommand($command, array $parameters = []): \Crunz\Event
     {
         return $this->run($this->getCakeCommand() . ' ' . $command, $parameters)
             ->in(escapeshellarg(ROOT));
@@ -31,11 +32,11 @@ class CakeSchedule extends Schedule
     /**
      * @return string
      */
-    protected function getCakeCommand()
+    protected function getCakeCommand(): string
     {
         $binDir = 'bin' . DS;
 
-        if (0 === strpos(strtoupper(PHP_OS), 'WIN')) {
+        if (PHP_OS_FAMILY === 'Windows') {
             return $binDir . 'cake.bat';
         }
 

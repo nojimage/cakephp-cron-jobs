@@ -1,16 +1,20 @@
 <?php
+/*
+ * Copyright 2022 ELASTIC Consultants Inc.
+ */
+
+declare(strict_types=1);
+
+use Cake\Cache\Cache;
+use Cake\Core\Configure;
 
 /**
- * Test suite bootstrap for CronJobs.
+ * Test suite bootstrap for CakePHP Plugin.
  *
  * This function is used to find the location of CakePHP whether CakePHP
  * has been installed as a dependency of the plugin, or the plugin is itself
  * installed as a dependency of an application.
  */
-
-use Cake\Core\Configure;
-use Cake\Core\Plugin;
-
 $findRoot = function ($root) {
     do {
         $lastRoot = $root;
@@ -20,7 +24,7 @@ $findRoot = function ($root) {
         }
     } while ($root !== $lastRoot);
 
-    throw new Exception("Cannot find the root of the application, unable to run tests");
+    throw new Exception('Cannot find the root of the application, unable to run tests');
 };
 $root = $findRoot(__FILE__);
 unset($findRoot);
@@ -30,11 +34,8 @@ $here = __DIR__;
 chdir($root);
 require $root . '/vendor/cakephp/cakephp/tests/bootstrap.php';
 
-// Disable deprecations for now when using 3.6
-if (version_compare(Configure::version(), '3.6.0', '>=')) {
-    error_reporting(E_ALL ^ E_USER_DEPRECATED);
-}
-
-Plugin::load('Elastic/CronJobs', ['path' => dirname(__DIR__) . DS]);
+Cache::clearAll();
 
 error_reporting(E_ALL);
+
+Configure::write('App.namespace', '\TestApp');
