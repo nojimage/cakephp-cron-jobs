@@ -4,8 +4,8 @@
     <a href="LICENSE.txt" target="_blank">
         <img alt="Software License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square">
     </a>
-    <a href="https://travis-ci.org/nojimage/cakephp-cron-jobs" target="_blank">
-        <img alt="Build Status" src="https://img.shields.io/travis/nojimage/cakephp-cron-jobs/master.svg?style=flat-square">
+    <a href="https://github.com/nojimage/cakephp-cron-jobs/actions" target="_blank">
+        <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/nojimage/cakephp-cron-jobs/ci.yml?style=flat-square&branch=cake3">
     </a>
     <a href="https://codecov.io/gh/nojimage/cakephp-cron-jobs" target="_blank">
         <img alt="Codecov" src="https://img.shields.io/codecov/c/github/nojimage/cakephp-cron-jobs.svg?style=flat-square">
