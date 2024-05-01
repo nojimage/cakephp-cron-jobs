@@ -37,4 +37,4 @@ Cache::clearAll();
 
 error_reporting(E_ALL);
 
-Configure::write('App.namespace', '\TestApp');
+Configure::write('App.namespace', 'TestApp');
