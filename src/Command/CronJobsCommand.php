@@ -34,7 +34,7 @@ class CronJobsCommand extends BaseCommand
             define('CRUNZ_BIN', ROOT . '/vendor/bin/crunz');
         }
         if (!defined('CRUNZ_VERSION')) {
-            define('CRUNZ_VERSION', '3.0.1');
+            define('CRUNZ_VERSION', '3.6.0');
         }
 
         parent::initialize();

@@ -6,6 +6,8 @@ declare(strict_types=1);
 
 namespace Elastic\CronJobs\Schedule;
 
+use Closure;
+use Crunz\Event;
 use Crunz\Schedule;
 
 /**
@@ -18,11 +20,11 @@ class CakeSchedule extends Schedule
     /**
      * Add a new event as CakePHP command to the schedule object.
      *
-     * @param string|\Closure $command a CakePHP's Command/Shell name
+     * @param \Closure|string $command a CakePHP's Command/Shell name
      * @param array $parameters command arguments and options
      * @return \Crunz\Event
      */
-    public function runCommand($command, array $parameters = []): \Crunz\Event
+    public function runCommand(string|Closure $command, array $parameters = []): Event
     {
         return $this->run($this->getCakeCommand() . ' ' . $command, $parameters)
             ->in(escapeshellarg(ROOT));

@@ -7,8 +7,8 @@ declare(strict_types=1);
 namespace Elastic\CronJobs\Test\TestCase\Command;
 
 use Cake\Console\ConsoleIo;
+use Cake\Console\TestSuite\ConsoleIntegrationTestTrait;
 use Cake\Core\Plugin;
-use Cake\TestSuite\ConsoleIntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 use Elastic\CronJobs\Command\CronJobsCommand;
 
@@ -51,7 +51,6 @@ class CronJobsCommandTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $this->useCommandRunner();
 
         $this->io = $this->getMockBuilder(ConsoleIo::class)->getMock();
         $this->CronJobs = new CronJobsCommand();

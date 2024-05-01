@@ -17,9 +17,9 @@ class Application extends BaseApplication
         $this->addPlugin('Elastic/CronJobs');
     }
 
-    public function middleware(MiddlewareQueue $middleware): MiddlewareQueue
+    public function middleware(MiddlewareQueue $middlewareQueue): MiddlewareQueue
     {
-        return $middleware;
+        return $middlewareQueue;
     }
 
     public function routes(RouteBuilder $routes): void

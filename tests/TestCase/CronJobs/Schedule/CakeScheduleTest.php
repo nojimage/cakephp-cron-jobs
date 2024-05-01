@@ -17,11 +17,11 @@ class CakeScheduleTest extends TestCase
     public function testRunCommand(): void
     {
         $schedule = new CakeSchedule();
-        $result = $schedule->runCommand('example_task', ['with-arg']);
+        $result = $schedule->runCommand('example_task', ['with-arg', '--opt1=value', '--opt2' => 'val']);
 
         // Can add event
         $this->assertCount(1, $schedule->events());
-        $this->assertSame('bin/cake example_task with-arg', $result->getCommand());
+        $this->assertSame("bin/cake example_task 'with-arg' '--opt1=value' '--opt2' 'val'", $result->getCommand());
         $this->assertSame(sprintf("'%s'", ROOT), $result->getWorkingDirectory());
     }
 }

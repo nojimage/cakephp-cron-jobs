@@ -8,7 +8,7 @@ use Cake\Cache\Cache;
 use Cake\Core\Configure;
 
 /**
- * Test suite bootstrap for CakePHP Plugin.
+ * Test suite bootstrap for Elastic/CronJobs.
  *
  * This function is used to find the location of CakePHP whether CakePHP
  * has been installed as a dependency of the plugin, or the plugin is itself
@@ -28,6 +28,7 @@ $findRoot = function ($root) {
 $root = $findRoot(__FILE__);
 unset($findRoot);
 
+// phpcs:ignore SlevomatCodingStandard.Variables.UnusedVariable.UnusedVariable
 $here = __DIR__;
 
 chdir($root);
