@@ -15,8 +15,15 @@
     </a>
 </p>
 
-This plugin is simple wrapper [lavary/crunz](https://github.com/lavary/crunz).
+This plugin is simple wrapper [crunzphp/crunz](https://github.com/crunzphp/crunz).
 
+## Version Map
+
+| CakePHP Version | Plugin Version | Branch         |
+|-----------------|----------------|----------------|
+| 5.x             | 3.x            | cake5          |
+| 4.x             | 2.x            | cake4          |
+| 3.x             | 0.3.x          | cake3          |
 
 ## Installation
 
@@ -41,7 +48,7 @@ $this->addPlugin('Elastic/CronJobs');
 Run `bin/cake CronJobs publish:config` command.
 The command generate `crunz.yml` in the project `ROOT` directory.
 
-You can configure with `crunz.yml`, see also [https://github.com/lavary/crunz#configuration](https://github.com/lavary/crunz#configuration)
+You can configure with `crunz.yml`, see also [https://github.com/crunzphp/crunz#configuration](https://github.com/crunzphp/crunz#configuration)
 
 I recommend changing `source:` to:
 
@@ -92,7 +99,7 @@ EventManager::instance()->on('CronJobs.buildSchedule', static function (Event $e
 ```
 
 `\Elastic\CronJobs\Schedule\CakeSchedule` is `\Crunz\Schedule` wrapper class.
-See also: [lavary/crunz README](https://github.com/lavary/crunz#crunz)
+See also: [crunzphp/crunz README](https://github.com/crunzphp/crunz#crunz)
 
 ### Show scheduled jobs
 
@@ -104,4 +111,4 @@ bin/cake CronJobs schedule:list vendor/elstc/cakephp-cron-jobs/tasks/
 
 larvery/crunz updated from 1.12 to 2.x(<= PHP 7.3), 3.x(>= PHP 7.4), See also crunz's Upgrade Guide.
 
-[crunz/UPGRADE\.md at master · lavary/crunz](https://github.com/lavary/crunz/blob/master/UPGRADE.md)
+[crunz/UPGRADE\.md at master · crunzphp/crunz](https://github.com/crunzphp/crunz/blob/master/UPGRADE.md)
