@@ -72,7 +72,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ steps.key-date.outputs.date }}-${{ hashFiles('composer.json') }}-${{ matrix.prefer-lowest }}
+          key: ${{ runner.os }}-composer-${{ steps.key-date.outputs.date }}-${{ matrix.php-version }}-${{ hashFiles('composer.json') }}-${{ matrix.prefer-lowest }}
 
       - name: Install packages
         run: |
@@ -85,9 +85,7 @@ jobs:
 
       - name: Composer install
         run: |
-          if [[ ${{ matrix.php-version }} == '8.1' ]]; then
-            composer update --ignore-platform-reqs
-          elif ${{ matrix.prefer-lowest == 'prefer-lowest' }}; then
+          if ${{ matrix.prefer-lowest == 'prefer-lowest' }}; then
             composer update --prefer-lowest --prefer-stable
           else
             composer update
@@ -144,7 +142,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ steps.key-date.outputs.date }}-${{ hashFiles('composer.json') }}-${{ matrix.prefer-lowest }}
+          key: ${{ runner.os }}-composer-${{ steps.key-date.outputs.date }}-${{ matrix.php-version }}-${{ hashFiles('composer.json') }}-${{ matrix.prefer-lowest }}
 
       - name: Composer install
         run: composer install
