@@ -15,7 +15,7 @@
     </a>
 </p>
 
-This plugin is simple wrapper [crunzphp/crunz](https://github.com/crunzphp/crunz).
+This plugin is a simple wrapper for [crunzphp/crunz](https://github.com/crunzphp/crunz).
 
 ## Version Map
 
@@ -46,9 +46,9 @@ $this->addPlugin('Elastic/CronJobs');
 ### Generate config file
 
 Run `bin/cake CronJobs publish:config` command.
-The command generate `crunz.yml` in the project `ROOT` directory.
+The command generates `crunz.yml` in the project `ROOT` directory.
 
-You can configure with `crunz.yml`, see also [https://github.com/crunzphp/crunz#configuration](https://github.com/crunzphp/crunz#configuration)
+You can configure it with `crunz.yml`, see also [https://github.com/crunzphp/crunz#configuration](https://github.com/crunzphp/crunz#configuration)
 
 I recommend changing `source:` to:
 
@@ -60,7 +60,7 @@ This makes it unnecessary to specify a directory when using `schedule:run` and `
 
 ### Register to cron
 
-add your cron schedule, use `crontab -e`
+Add your cron schedule using `crontab -e`:
 
 ```
 * * * * * cd {YOUR-APP-DIR}; bin/cake CronJobs schedule:run vendor/elstc/cakephp-cron-jobs/tasks/
@@ -68,9 +68,9 @@ add your cron schedule, use `crontab -e`
 
 ## Usage
 
-You can register a schedule job from the CakePHP event system.
+You can register a scheduled job from the CakePHP event system.
 
-Register to job schduler in bootstrap_cli.php, using cakephp event system:
+Register to job scheduler in bootstrap_cli.php using the CakePHP event system:
 
 ```php
 use Cake\Event\Event;
@@ -79,17 +79,17 @@ use Cake\Event\EventManager;
 EventManager::instance()->on('CronJobs.buildSchedule', static function (Event $event) {
     /** @type \Elastic\CronJobs\Schedule\CakeSchedule $schedule */
     $schedule = $event->getSubject();
-    
-    // Add scheduled command
+
+    // Add a scheduled command
     $schedule->run('touch tmp/crunz-time-from-event')
         ->description('your job description')
         ->everyDay()
         ->at('09:00');
 
-    // Add scheduled cake's command
-    // such as `bin/cake your_command comannd_arg1 --command-option --some-opt=value`
+    // Add a scheduled cake's command
+    // such as `bin/cake your_command command_arg1 --command-option --some-opt=value`
     $schedule->runCommand('your_command', [
-            'comannd_arg1',
+            'command_arg1',
             '--command-option',
             '--some-opt' => 'value',
         ])
@@ -98,7 +98,7 @@ EventManager::instance()->on('CronJobs.buildSchedule', static function (Event $e
 });
 ```
 
-`\Elastic\CronJobs\Schedule\CakeSchedule` is `\Crunz\Schedule` wrapper class.
+`\Elastic\CronJobs\Schedule\CakeSchedule` is a `\Crunz\Schedule` wrapper class.
 See also: [crunzphp/crunz README](https://github.com/crunzphp/crunz#crunz)
 
 ### Show scheduled jobs
@@ -109,6 +109,6 @@ bin/cake CronJobs schedule:list vendor/elstc/cakephp-cron-jobs/tasks/
 
 ### Upgrade from CakePHP 3
 
-larvery/crunz updated from 1.12 to 2.x(<= PHP 7.3), 3.x(>= PHP 7.4), See also crunz's Upgrade Guide.
+crunzphp/crunz updated from 1.12 to 2.x (<= PHP 7.3), 3.x (>= PHP 7.4). See also crunz's Upgrade Guide.
 
 [crunz/UPGRADE\.md at master · crunzphp/crunz](https://github.com/crunzphp/crunz/blob/master/UPGRADE.md)
