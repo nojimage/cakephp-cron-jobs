@@ -71,6 +71,7 @@ class CronJobsCommand extends BaseCommand
      */
     protected function getInput(Arguments $args): InputInterface
     {
+        /** @var array<string> $argv */
         $argv = $args->getArguments();
         // bypass to the symfony application
         array_unshift($argv, 'crunz');
