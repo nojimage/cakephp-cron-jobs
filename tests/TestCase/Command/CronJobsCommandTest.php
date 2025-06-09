@@ -11,6 +11,7 @@ use Cake\Console\TestSuite\ConsoleIntegrationTestTrait;
 use Cake\Core\Plugin;
 use Cake\TestSuite\TestCase;
 use Elastic\CronJobs\Command\CronJobsCommand;
+use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * Elastic\CronJobs\Shell\CronJobsShell Test Case
@@ -22,26 +23,26 @@ class CronJobsCommandTest extends TestCase
     /**
      * ConsoleIo mock
      *
-     * @var ConsoleIo|\PHPUnit\Framework\MockObject\MockObject
+     * @var ConsoleIo&\PHPUnit\Framework\MockObject\MockObject
      */
-    public $io;
+    public ConsoleIo&MockObject $io;
 
     /**
      * Test subject
      *
      * @var CronJobsCommand
      */
-    public $CronJobs;
+    public CronJobsCommand $CronJobs;
 
     /**
      * @var string
      */
-    private $_cwd;
+    private string $_cwd;
 
     /**
      * @var string
      */
-    private $testAppRoot;
+    private string $testAppRoot;
 
     /**
      * setUp method
@@ -74,12 +75,13 @@ class CronJobsCommandTest extends TestCase
     {
         unset($this->CronJobs);
         chdir($this->_cwd);
+        restore_error_handler();
 
         parent::tearDown();
     }
 
     /**
-     * Test main method
+     * Test the main method
      *
      * @return void
      */
@@ -91,7 +93,7 @@ class CronJobsCommandTest extends TestCase
     }
 
     /**
-     * Test main method
+     * Test the main method
      *
      * @return void
      */
