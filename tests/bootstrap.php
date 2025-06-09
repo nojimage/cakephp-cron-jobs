@@ -39,3 +39,7 @@ Cache::clearAll();
 error_reporting(E_ALL);
 
 Configure::write('App.namespace', 'TestApp');
+
+if (!defined('CRUNZ_VERSION')) {
+    define('CRUNZ_VERSION', '3.6.0');
+}
