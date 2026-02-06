@@ -7,3 +7,5 @@ parameters:
         - test_app/
     bootstrapFiles:
         - tests/bootstrap.php
+    ignoreErrors:
+        - identifier: missingType.generics

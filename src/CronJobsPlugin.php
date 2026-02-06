@@ -13,7 +13,7 @@ use Elastic\CronJobs\Command\CronJobsCommand;
 /**
  * Plugin class for CakePHP.
  */
-class Plugin extends BasePlugin
+class CronJobsPlugin extends BasePlugin
 {
     /**
      * Do bootstrapping or not
